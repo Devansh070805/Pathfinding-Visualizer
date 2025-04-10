@@ -1,0 +1,100 @@
+/* General layout */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  justify-content: flex-start;
+}
+
+/* Header */
+.header {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 2rem;
+  margin: 0;
+  z-index: 10;
+}
+
+/* Controls Section */
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 8px; /* Reduced gap between buttons */
+  margin-top: 60px; /* Space from the header */
+  margin-bottom: 20px; /* Reduce this if it's causing extra space below */
+}
+
+button {
+  padding: 8px 16px; /* Slightly smaller padding */
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #000000;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #353935;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  gap: 2px;
+  grid-template-columns: repeat(10, 25px);
+  margin-top: 20px;
+}
+
+.cell {
+  width: 25px;
+  height: 25px;
+  background-color: #eee;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.cell.start {
+  background-color: green;
+}
+
+.cell.end {
+  background-color: red;
+}
+
+.cell.wall {
+  background-color: black;
+}
+
+.cell.visited {
+  background-color: #87cefa;
+}
+
+.cell.path {
+  background-color: #32cd32;
+}
+
+/* Graph View */
+.graph-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 120px); /* Adjust height to avoid overlap */
+  width: 100%;
+  margin-top: 20px; /* Reduced margin for better alignment */
+}
